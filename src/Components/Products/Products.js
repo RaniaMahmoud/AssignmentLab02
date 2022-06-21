@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import axiosInst from "../../axios/Axios";
 
 const Items = () => {
     const [items, setItems] = useState([]);
+
+    //const Loading= useSelector((state)=>state.loading.isLoad)
+
     useEffect(() => { 
          axiosInst.get("products")
         //fetch("https://fakestoreapi.com/products")
@@ -18,6 +22,10 @@ const Items = () => {
     return (
         <>
             <div className="row row-cols-1 row-cols-md-2 g-4 mt-5 ms-5">
+            {/* {Loading&& 
+            <div className="d-flex justify-content-center">
+                <div className="spinner-border " role="status"></div>
+            </div>} */}
                 {items.map((item) => {
                     console.log(item);
                     return (
