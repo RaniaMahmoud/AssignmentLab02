@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInst = axios.create({
-    baseURL:"https://fakestoreapi.com/",
+    baseURL: "https://fakestoreapi.com/",
 });
 
 // axiosInst.interceptors.request.use(

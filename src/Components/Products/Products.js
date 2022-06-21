@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axiosInst from "../../axios/Axios";
 
 const Items = () => {
     const [items, setItems] = useState([]);
     useEffect(() => { 
-        axiosInst.get("products")
-        .then((result) => {
-            console.log(result.data);
-            setItems(result.data);
-        }).catch((error) => {
-            console.log(error);
+         axiosInst.get("products")
+        //fetch("https://fakestoreapi.com/products")
+        //get("products")
+        .then((res) => {
+          console.log(res.data);
+          setItems(res.data);
         })
+        .catch((err) => {
+          console.log(err);
+        });
     }, []);
     return (
         <>
